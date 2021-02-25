@@ -83,7 +83,12 @@ public class WordCreator {
         }
 
         writeLine(document, 1);
-        write(document, ParagraphAlignment.LEFT, 14, article.getDescription());
+        final String answerDescription = "Keys";
+        write(document, ParagraphAlignment.LEFT, 14, article.getDescription(), null, run -> {
+            if (answerDescription.equals(article.getDescription())) {
+                run.setBold(true);
+            }
+        });
         writeLine(document, 1);
 
         List<String> items = article.getItems();

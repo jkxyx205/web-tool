@@ -17,6 +17,7 @@ public class Article {
 
     private String subtitle;
 
+    @With
     private String description;
 
     @With

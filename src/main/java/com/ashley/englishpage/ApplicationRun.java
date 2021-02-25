@@ -12,8 +12,8 @@ public class ApplicationRun {
 //        writeTable("https://www.englishpage.com/verbpage/verbtenseintro.html", "/Users/rick/Documents/export/Verb Tenses");
 //        writeTable("https://www.englishpage.com/modals/modalintro.html", "/Users/rick/Documents/export/Modal Verbs");
 //        writeTable("https://www.englishpage.com/conditional/conditionalintro.html", "/Users/rick/Documents/export/Conditional");
-        writeUL("https://www.englishpage.com/prepositions/prepositions.html", "/Users/rick/Documents/export/Preposition");
-//        write1("/Users/rick/Documents/export/Gerunds and Infinitives");
+//        writeUL("https://www.englishpage.com/prepositions/prepositions.html", "/Users/rick/Documents/export/Preposition");
+        write1("/Users/rick/Documents/export/Gerunds and Infinitives");
     }
 
     private static void writeTable(String rootUrl, String folder) throws Exception {

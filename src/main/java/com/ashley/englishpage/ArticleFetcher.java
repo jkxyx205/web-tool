@@ -18,7 +18,6 @@ import java.util.stream.Collectors;
 public class ArticleFetcher {
 
     public Article[] fetchAll(String url) throws IOException {
-        System.out.println(url);
         Article blank = fetchBlank(url);
         Article answer = fetchAnswer(url, blank);
         return new Article[] {blank, answer};
@@ -50,7 +49,8 @@ public class ArticleFetcher {
            String description = null;
            Element descriptionElement = document.selectFirst("#Instructions");
            if (Objects.nonNull(descriptionElement)) {
-               description = descriptionElement.text();
+               description = descriptionElement.text()
+                       .replaceAll(", then.*Check.+?(\\.|,)", "$1");
            }
 
            Element contentElement = document.selectFirst(".ClozeBody");
@@ -74,7 +74,7 @@ public class ArticleFetcher {
             blank = fetchBlank(url);
         }
 
-        return blank.withItems(handleAnswerBody(itemHTML));
+        return blank.withItems(handleAnswerBody(itemHTML)).withDescription("Keys");
     }
 
     private List<String> handleBlankBody(String html)  {
